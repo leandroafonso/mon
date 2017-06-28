@@ -22,9 +22,8 @@
     $(document).ready(function(){
         var email = getURI("e");
         var altura = $(document).height();
-        console.log(altura);
-
-        $('body').append("<iframe id=\"boleto\" src=\"https://app.monetizze.com.br/checkout/boleto?e="+email+"&p=39485\" width=\"100%\" height=\""+altura+"\"/>");
+	//troque no lugar do XXXXXXXXXX o código do seu produto.
+        $('body').append("<iframe id=\"boleto\" src=\"https://app.monetizze.com.br/checkout/boleto?e="+email+"&p=XXXXXXXXXX\" width=\"100%\" height=\""+altura+"\"/>");
     });
 </script>
 </body>

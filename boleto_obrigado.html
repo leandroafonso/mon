@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+    function getURI(sparam){
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for(var i = 0; i < sURLVariables.length; i++){
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sparam){
+                return  sParameterName[1];
+            }
+        }
+    }
+    $(document).ready(function(){
+        var email = getURI("e");
+        var altura = $(document).height();
+        console.log(altura);
+
+        $('body').append("<iframe id=\"boleto\" src=\"https://app.monetizze.com.br/checkout/boleto?e="+email+"&p=39485\" width=\"100%\" height=\""+altura+"\"/>");
+    });
+</script>
+</body>
+</html>
+
